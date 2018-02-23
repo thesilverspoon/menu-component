@@ -40,7 +40,7 @@ describe('dessert generator func', () => {
     expect(Array.isArray(dessertMenu)).toBe(true);
   });
 
-  it('should have a length of 20', () => {
+  it('should have a length of 8', () => {
     expect(dessertMenu.length).toEqual(8);
   });
 
