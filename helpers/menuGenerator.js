@@ -78,6 +78,7 @@ const nouns = [
   'bacon',
   'prosciutto',
   'avocado',
+  'avocado on toast',
 ];
 
 const type = [
@@ -114,9 +115,31 @@ const tags = [
   'vegetarian',
 ];
 
+const desserts = [
+  'deconstructed cornbread puree',
+  'late-summer berry creme brulee',
+  'damson plum clafoutis',
+  'roaster pears with espresso mascarpone cream',
+  'poppyseed cake with passion-fruit curd',
+  'cannoli',
+  'strawberry mint souffle',
+  'deconstructed lave cake',
+  'frozen cookie dough',
+  'salted caramel bundt cake',
+  'lemon paste curd tart',
+  'blackout cake',
+  'flourless vanilla chocolate brownie',
+  'bear claw',
+  'bedfordshire clanger',
+  'cherry pie & burnt ginger flakes',
+  'brandy snaps',
+  'girl guide cookies',
+  'black mango and blood orange truffles',
+];
+
 const getIndex = array => Math.floor(Math.random() * array.length);
 
-const menuGenerator = () => {
+const entreMenuGen = () => {
   let count = 20;
   const result = [];
   const usedNouns = [];
@@ -149,4 +172,23 @@ const menuGenerator = () => {
   return result;
 };
 
-export default menuGenerator;
+const dessertMenuGen = () => {
+  let count = 8;
+  const result = [];
+  while (count > 0) {
+    const index = getIndex(desserts);
+    const price = Math.floor((Math.random() * (40 - 10)) + 10);
+    if (!result.includes(desserts[index])) {
+      count -= 1;
+      result.push({
+        foodItem: desserts[index],
+        cost: price,
+        tags: tags[getIndex(tags)],
+      });
+    }
+  }
+  return result;
+};
+
+module.exports.entreMenuGen = entreMenuGen;
+module.exports.dessertMenuGen = dessertMenuGen;
