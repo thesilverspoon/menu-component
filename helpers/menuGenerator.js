@@ -139,7 +139,7 @@ const desserts = [
 
 const getIndex = array => Math.floor(Math.random() * array.length);
 
-const entreMenuGen = () => {
+const entreeMenuGen = () => {
   let count = 20;
   const result = [];
   const usedNouns = [];
@@ -190,5 +190,5 @@ const dessertMenuGen = () => {
   return result;
 };
 
-module.exports.entreMenuGen = entreMenuGen;
+module.exports.entreeMenuGen = entreeMenuGen;
 module.exports.dessertMenuGen = dessertMenuGen;

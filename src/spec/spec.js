@@ -1,37 +1,37 @@
 const menuList = require('../../helpers/menuGenerator');
 
-let entreMenu = '';
+let entreeMenu = '';
 let dessertMenu = '';
 let dessertItem = '';
-let entreItem = '';
+let entreeItem = '';
 
 beforeEach(() => {
-  entreMenu = menuList.entreMenuGen();
-  entreItem = [entreMenu[0]];
+  entreeMenu = menuList.entreeMenuGen();
+  entreeItem = [entreeMenu[0]];
   dessertMenu = menuList.dessertMenuGen();
   dessertItem = [dessertMenu[0]];
 });
 
-describe('entre generator func', () => {
+describe('entree generator func', () => {
   it('should be an array', () => {
-    expect(Array.isArray(entreMenu)).toBe(true);
+    expect(Array.isArray(entreeMenu)).toBe(true);
   });
 
   it('should have a length of 20', () => {
-    expect(entreMenu.length).toEqual(20);
+    expect(entreeMenu.length).toEqual(20);
   });
 
   it('should contain objects with properties: foodItem, cost, tags', () => {
-    expect(Object.keys(entreItem[0]).length).toEqual(3);
-    expect(Object.keys(entreItem[0])).toContain('foodItem');
-    expect(Object.keys(entreItem[0])).toContain('cost');
-    expect(Object.keys(entreItem[0])).toContain('tags');
+    expect(Object.keys(entreeItem[0]).length).toEqual(3);
+    expect(Object.keys(entreeItem[0])).toContain('foodItem');
+    expect(Object.keys(entreeItem[0])).toContain('cost');
+    expect(Object.keys(entreeItem[0])).toContain('tags');
   });
 
   it('should contain the correct value types for each property', () => {
-    expect(typeof entreMenu[0].foodItem).toBe('string');
-    expect(typeof entreMenu[0].cost).toBe('number');
-    expect(typeof entreMenu[0].tags).toBe('string');
+    expect(typeof entreeMenu[0].foodItem).toBe('string');
+    expect(typeof entreeMenu[0].cost).toBe('number');
+    expect(typeof entreeMenu[0].tags).toBe('string');
   });
 });
 
