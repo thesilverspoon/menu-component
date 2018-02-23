@@ -8,8 +8,8 @@ beforeEach(() => {
   menuItem = [menu[0]];
 });
 
-it('should be an array (e.g. typeof === object)', () => {
-  expect(typeof menu).toBe('object');
+it('should be an array', () => {
+  expect(Array.isArray(menu)).toBe(true);
 });
 
 it('should have a length of 20', () => {
