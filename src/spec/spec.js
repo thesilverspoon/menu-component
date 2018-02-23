@@ -1,13 +1,11 @@
 import menuGen from '../../helpers/menuGenerator';
 
-let index = '';
 let menu = '';
 let menuItem = '';
 
 beforeEach(() => {
-  index = Math.floor(Math.random() * 20);
   menu = menuGen();
-  menuItem = menu[index];
+  menuItem = [menu[0]];
 });
 
 it('should be an array (e.g. typeof === object)', () => {
@@ -19,9 +17,10 @@ it('should have a length of 20', () => {
 });
 
 it('should contain objects with properties: foodItem, cost, tags', () => {
-  expect(Object.keys(menuItem)).toContain('foodItem');
-  expect(Object.keys(menuItem)).toContain('cost');
-  expect(Object.keys(menuItem)).toContain('tags');
+  expect(Object.keys(menuItem[0]).length).toEqual(3);
+  expect(Object.keys(menuItem[0])).toContain('foodItem');
+  expect(Object.keys(menuItem[0])).toContain('cost');
+  expect(Object.keys(menuItem[0])).toContain('tags');
 });
 
 it('should contain the correct value types for each property', () => {
