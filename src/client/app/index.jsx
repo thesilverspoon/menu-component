@@ -1,5 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './menuView';
+import MenuView from './components/menuView';
 
-render(<App />, document.getElementById('app'));
+render(<MenuView />, document.getElementById('app'));
