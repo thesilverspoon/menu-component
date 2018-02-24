@@ -2,7 +2,7 @@
   "name": "fec_menu_component",
   "version": "1.0.0",
   "description": "the menu component for our FEC project",
-  "main": "menuItemGenerator.js",
+  "main": "src/server/server.js",
   "scripts": {
     "test": "jest",
     "build": "./node_modules/.bin/webpack -d --watch"
@@ -30,10 +30,14 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.2",
     "jest-cli": "^22.4.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
     "webpack": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.15.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
 }
