@@ -5,7 +5,8 @@
   "main": "src/server/server.js",
   "scripts": {
     "test": "jest",
-    "build": "./node_modules/.bin/webpack -d --watch"
+    "build": "./node_modules/.bin/webpack -d --watch",
+    "testData": "node data/sampleData.js"
   },
   "repository": {
     "type": "git",
