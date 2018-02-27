@@ -5,8 +5,7 @@
   "main": "src/server/server.js",
   "scripts": {
     "test": "jest",
-    "build": "./node_modules/.bin/webpack -d --watch",
-    "testData": "node db/dbHelpers.js"
+    "build": "./node_modules/.bin/webpack -d --watch"
   },
   "repository": {
     "type": "git",
