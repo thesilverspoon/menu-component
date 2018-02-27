@@ -7,9 +7,21 @@ const restaurantSchema = mongoose.Schema({
   id: Number,
   name: String,
   menu: {
-    lunch: [Object],
-    dinner: [Object],
-    dessert: [Object],
+    lunch: [{
+      foodItem: String,
+      cost: Number,
+      tags: String,
+    }],
+    dinner: [{
+      foodItem: String,
+      cost: Number,
+      tags: String,
+    }],
+    dessert: [{
+      foodItem: String,
+      cost: Number,
+      tags: String,
+    }],
   },
 });
 
