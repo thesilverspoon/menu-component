@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const url = 'mongodb://localhost/testDB';
 
 const testSchema = mongoose.Schema({
-  id: Number,
+  id: { type: Number, index: { unique: true } },
   name: String,
   menu: {
     lunch: [{
@@ -26,7 +26,7 @@ const testSchema = mongoose.Schema({
   },
 });
 
-const TestColl = mongoose.model('TestRestaurants', testSchema);
+const TestColl = mongoose.model('specColl', testSchema);
 
 const testItem = new TestColl({
   id: 9871,
@@ -50,42 +50,44 @@ const testItem = new TestColl({
   },
 });
 
-describe('Database Tests', function() {
+describe('Database Tests', () => {
+  let data = '';
   // Before starting the test, create a sandboxed database connection
   // Once a connection is established invoke done()
   beforeAll((done) => {
-    mongoose.connect('mongodb://localhost/testDatabase');
+    mongoose.connect(url);
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error'));
     db.once('open', () => {
-      console.log('We are connected to test database!');
+      console.log('We are connected to test database!', url);
       done();
     });
   });
+
+  beforeEach((done) => {
+    TestColl.remove({}, () => {
+      console.log('collection dropped');
+      dbHelpers.save([testItem], TestColl, (result) => {
+        if (result) {
+          done();
+        }
+      });
+    });
+  });
+
   // Save object with 'name' value of 'Mike"
-  it('Data saved to test database', (done) => {
-    dbHelpers.save([testItem], TestColl);
-    done();
-  });
-
-  it('Should retrieve data from test database', (done) => {
-  // Look up the 'Mike' object previously saved.
-    // TestColl.find({ id: 9871 }, (err, data) => {
-    //   if (err) { throw err; }
-    //   console.log(data[0].menu.lunch);
-    dbHelpers.find(9871, TestColl, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        // expect(data[0].id).toBe(9871);
-        console.log(data);
-      }
+  it('should save data to test database', async (done) => {
+    expect.assertions(1);
+    dbHelpers.find(9871, TestColl, (err, docs) => {
+      if (err) { throw err; }
+      data = docs;
+      console.log('data ===> ', docs);
+      expect(data.length).toBe(1);
       done();
     });
   });
 
-
-  afterAll(done => {
+  afterAll((done) => {
     mongoose.connection.db.dropDatabase(() => {
       mongoose.connection.close(done);
     });
