@@ -25,11 +25,12 @@ const restaurantSchema = mongoose.Schema({
   },
 });
 
-const Restaurant = mongoose.model('restaurant', restaurantSchema);
+const Restaurant = mongoose.model('restaurants', restaurantSchema);
 
-const save = (data) => {
+const save = (data, Model) => {
+  let count = 0;
   data.forEach((item) => {
-    const restaurant = new Restaurant({
+    const instance = new Model({
       id: item.id,
       name: item.name,
       menu: {
@@ -38,15 +39,30 @@ const save = (data) => {
         dessert: item.menu.dessert,
       },
     });
-    restaurant.save((err) => {
+    instance.save((err) => {
+      count += 1;
       if (err) {
-        console.log('error adding item to db');
-      } else {
-        console.log('item successfully added to db');
+        console.log('error adding items to db', err);
+      } else if (count === data.length) {
+        console.log('items successfully added to db');
+        mongoose.disconnect();
       }
     });
   });
 };
 
-save(sampleData);
+const find = (idNum, Model, callback) => {
+  Model.find({ id: idNum }, (err, data) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, data);
+    }
+    mongoose.disconnect();
+  });
+};
+
 module.exports.save = save;
+module.exports.find = find;
+module.exports.Restaurant = Restaurant;
+
