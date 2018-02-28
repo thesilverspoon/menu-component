@@ -26,7 +26,7 @@ describe('Database Tests', () => {
     dbHelpers.find(90976, seed.TestColl, (err, docs) => {
       if (err) { throw err; }
       console.log('data ===> ', docs);
-      expect(docs.length).toBe(8);
+      expect(docs.length).toBe(1);
       expect(docs[0].id).toBe(90976);
       done();
     });
