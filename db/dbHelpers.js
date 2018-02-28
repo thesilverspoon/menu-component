@@ -51,8 +51,8 @@ const save = (data, Model, cb) => {
   });
 };
 
-const find = (idNum, Model, cb) => {
-  Model.find({ id: idNum }, (err, data) => {
+const find = (queryObj, Model, cb) => {
+  Model.find(queryObj, (err, data) => {
     if (err) {
       cb(err, null);
     } else {
