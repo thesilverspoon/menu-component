@@ -4,9 +4,9 @@
   "description": "the menu component for our FEC project",
   "main": "src/server/server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest db.test.js",
     "build": "./node_modules/.bin/webpack -d --watch",
-    "testData": "node data/sampleData.js"
+    "seed": "node db/dbHelpers.js"
   },
   "repository": {
     "type": "git",
@@ -33,12 +33,15 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.2",
     "jest-cli": "^22.4.0",
+    "mongo-mock": "^3.1.0",
     "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.1",
     "webpack": "^3.11.0"
   },
   "dependencies": {
     "express": "^4.16.2",
+    "mongodb-memory-server": "^1.7.0",
+    "mongoose": "^5.0.7",
     "morgan": "^1.9.0",
     "nodemon": "^1.15.1",
     "react": "^16.2.0",

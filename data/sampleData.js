@@ -4,6 +4,7 @@ const initialData = [
   { id: 90976, name: 'Beard Papa\'s' },
   { id: 90826, name: 'Tpumps' },
   { id: 89104, name: 'Tokyo Katana-Ya' },
+  { id: 89104, name: 'Tokyo Katana-Ya' },
   { id: 87260, name: 'Senor Sisig' },
   { id: 86567, name: 'Poke Bar' },
   { id: 86549, name: 'Crepes Sil Vous Plait' },
