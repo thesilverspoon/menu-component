@@ -193,6 +193,6 @@ const testSchema = mongoose.Schema({
   },
 });
 
-const TestColl = mongoose.model('test-coll', testSchema);
+const TestColl = mongoose.model('testcoll', testSchema);
 
 module.exports = { TestColl, testData };

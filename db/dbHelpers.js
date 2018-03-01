@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const sampleData = require('../data/sampleData');
 
-mongoose.connect('mongodb://localhost/fec-project');
+mongoose.connect('mongodb://localhost/fecproject');
 
 const restaurantSchema = mongoose.Schema({
-  id: { type: Number, index: { unique: true } },
+  id: { type: Number, unique: true },
   name: String,
   menu: {
     lunch: [{
@@ -41,14 +41,17 @@ const save = (options, cb) => {
         dessert: item.menu.dessert,
       },
     });
-    Model.create(instance, (err, result) => {
-      count += 1;
-      if (err) {
-        console.log('error adding to db ==> ', err);
-      }
-      if (count === data.length) {
-        cb(result);
-      }
+    Model.on('index', (error) => {
+      console.log(error);
+      Model.create(instance, (err, result) => {
+        if (err) {
+          console.log('error adding to db ==> ', err);
+        }
+        count += 1;
+        if (count === data.length) {
+          cb(result);
+        }
+      });
     });
   });
 };
