@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest db.test.js",
     "build": "./node_modules/.bin/webpack -d --watch",
-    "seed": "node db/dbHelpers.js"
+    "seed": "node db/seedDatabase.js"
   },
   "repository": {
     "type": "git",
