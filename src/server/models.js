@@ -2,25 +2,28 @@ const dbHelpers = require('../../db/dbHelpers');
 
 module.exports = {
   menuType: (req, res) => {
-    const query = {
-      id: req.body.id,
-      query: req.body.query,
+    const reqArr = req.url.split('/').slice(1);
+    const request = reqArr.join('.');
+    const queryObj = {
+      query: request,
     };
-    dbHelpers.find(query, (err, result) => {
+    dbHelpers.find(queryObj, (err, result) => {
       const resultObj = result[0].toObject();
-      res.send(resultObj[req.body.query]);
+      res.send(resultObj[reqArr[0]][reqArr[1]]);
     });
   },
   filterBy: (req, res) => {
-    const query = {
-      id: req.body.id,
-      query: req.body.query,
+    const reqArr = req.url.split('/').slice(1, 3);
+    const request = reqArr.join('.');
+    const tag = req.url.split('/').slice(3).toString();
+    const queryObj = {
+      query: request,
     };
-    const tag = req.body.tags;
-    dbHelpers.find(query, (err, result) => {
+    dbHelpers.find(queryObj, (err, result) => {
       const resultObj = result[0].toObject();
-      const { lunch } = resultObj.menu;
-      const filteredMenu = lunch.filter(item => item.tags === tag);
+      const menu = resultObj.menu[reqArr[1]];
+      const filteredMenu = menu.filter(item => item.tags === tag);
+      // res.send(tag);
       res.send(filteredMenu);
     });
   },
