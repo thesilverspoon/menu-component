@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const sampleData = require('../data/sampleData');
 
-mongoose.connect('mongodb://localhost/fecproject');
+// mongoose.connect('mongodb://localhost/fecproject');
 
 const restaurantSchema = mongoose.Schema({
   id: { type: Number, unique: true },
@@ -28,6 +27,7 @@ const restaurantSchema = mongoose.Schema({
 const Restaurant = mongoose.model('restaurants', restaurantSchema);
 
 const save = (options, cb) => {
+  mongoose.connect('mongodb://localhost/fecproject');
   const { data } = options;
   const Model = options.model;
   let count = 0;
@@ -50,6 +50,7 @@ const save = (options, cb) => {
         count += 1;
         if (count === data.length) {
           cb(result);
+          mongoose.disconnect();
         }
       });
     });
@@ -57,24 +58,26 @@ const save = (options, cb) => {
 };
 
 const find = (options, cb) => {
+  mongoose.connect('mongodb://localhost/fecproject');
   const query = options.query || 'id menu.lunch';
   const idNum = options.id || 90976;
-  const { model } = options;
 
   if (query === '{}') {
-    model.find({}).exec((err, data) => {
+    Restaurant.find({}).exec((err, data) => {
       if (err) {
         cb(err, null);
       } else {
         cb(null, data);
+        mongoose.disconnect();
       }
     });
   } else {
-    model.find({ id: idNum }).select(query).exec((err, data) => {
+    Restaurant.find({ id: idNum }).select(query).exec((err, data) => {
       if (err) {
         cb(err, null);
       } else {
         cb(null, data);
+        mongoose.disconnect();
       }
     });
   }
