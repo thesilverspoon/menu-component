@@ -27,7 +27,9 @@ const restaurantSchema = mongoose.Schema({
 
 const Restaurant = mongoose.model('restaurants', restaurantSchema);
 
-const save = (data, Model, cb) => {
+const save = (options, cb) => {
+  const { data } = options;
+  const Model = options.model;
   let count = 0;
   data.forEach((item) => {
     const instance = new Model({
@@ -51,14 +53,28 @@ const save = (data, Model, cb) => {
   });
 };
 
-const find = (queryObj, Model, cb) => {
-  Model.find(queryObj, (err, data) => {
-    if (err) {
-      cb(err, null);
-    } else {
-      cb(null, data);
-    }
-  });
+const find = (options, cb) => {
+  const query = options.query || 'id menu.lunch';
+  const idNum = options.id || 90976;
+  const { model } = options;
+
+  if (query === '{}') {
+    model.find({}).exec((err, data) => {
+      if (err) {
+        cb(err, null);
+      } else {
+        cb(null, data);
+      }
+    });
+  } else {
+    model.find({ id: idNum }).select(query).exec((err, data) => {
+      if (err) {
+        cb(err, null);
+      } else {
+        cb(null, data);
+      }
+    });
+  }
 };
 
 module.exports.save = save;
