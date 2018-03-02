@@ -4,7 +4,7 @@
   "description": "the menu component for our FEC project",
   "main": "src/server/server.js",
   "scripts": {
-    "test": "jest server.test.js",
+    "test": "jest menuView.test.js",
     "build": "./node_modules/.bin/webpack -d --watch",
     "seed": "node seedDatabase.js"
   },
