@@ -1,4 +1,4 @@
-const dbHelpers = require('../dbHelpers');
+const dbHelpers = require('../../../db/dbHelpers');
 
 describe('database helpers - save and find', () => {
   it('should save all data items to test database', (done) => {
