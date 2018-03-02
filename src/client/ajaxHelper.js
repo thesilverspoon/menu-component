@@ -10,9 +10,6 @@ const ajaxGet = (restId, menuType, tag) => {
     success: (data) => {
       console.log('response from server ==> ', data);
     },
-    error: (err) => {
-      console.log('error connecting =====> ', err);
-    },
   });
 };
 
