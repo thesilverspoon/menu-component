@@ -38,8 +38,8 @@ const save = (options, cb) => {
         dessert: item.menu.dessert,
       },
     });
-    Model.on('index', (error) => {
-      console.log(error);
+    // Model.on('index', (error) => {
+    //   console.log(error);
       Model.create(instance, (err, result) => {
         if (err) {
           console.log('error adding to db ==> ', err);
@@ -49,7 +49,7 @@ const save = (options, cb) => {
           cb(result);
         }
       });
-    });
+    // });
   });
 };
 
