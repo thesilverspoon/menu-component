@@ -1,16 +1,8 @@
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-
-const app = express();
-
-app.use(morgan('dev'));
-app.use('/', express.static(path.join(__dirname, '../client')));
-app.use('/', express.static(path.join(__dirname, '../public')));
-
+const app = require('./app');
+const db = require('../../db/dbHelpers');
 
 const port = 3005;
 
-app.listen(port, () => {});
+db.mongoose.connect('mongodb://localhost/fecproject');
+app.listen(port, () => { console.log(`listening on port: ${port}`); });
 
-module.exports = app;
