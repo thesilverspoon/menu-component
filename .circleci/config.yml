@@ -9,11 +9,11 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:9.1.0
         environment:
-          MONGO_URL: "mongodb://localhost/fecproject"
+          MONGO_URL: "mongodb://localhost:3005/fecproject"
           MONGODB_DATABASE: "fecproject"
       - image: circleci/mongo:3.4.4
         environment:
-          MONGO_URL: "mongodb://localhost/fecproject"
+          MONGO_URL: "mongodb://localhost:3005/fecproject"
           MONGODB_DATABASE: "fecproject"
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
