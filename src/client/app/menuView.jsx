@@ -6,7 +6,7 @@ class MenuView extends React.Component {
     super(props);
     this.state = {
       restId: 90976,
-      menuType: 'dessert',
+      menuType: 'lunch',
       tag: 'vegan',
     };
   }

@@ -2,28 +2,24 @@ const dbHelpers = require('../../db/dbHelpers');
 
 module.exports = {
   menuType: (req, res) => {
-    const reqArr = req.url.split('/').slice(1);
-    const request = reqArr.join('.');
+    const { meal } = req.params;
     const queryObj = {
-      query: request,
+      query: `menu.${meal}`,
     };
     dbHelpers.find(queryObj, (err, result) => {
       const resultObj = result[0].toObject();
-      res.send(resultObj[reqArr[0]][reqArr[1]]);
+      res.send(resultObj.menu[meal]);
     });
   },
   filterBy: (req, res) => {
-    const reqArr = req.url.split('/').slice(1, 3);
-    const request = reqArr.join('.');
-    const tag = req.url.split('/').slice(3).toString();
+    const { meal, tag } = req.params;
     const queryObj = {
-      query: request,
+      query: `menu.${meal}`,
     };
     dbHelpers.find(queryObj, (err, result) => {
       const resultObj = result[0].toObject();
-      const menu = resultObj.menu[reqArr[1]];
+      const menu = resultObj.menu[meal];
       const filteredMenu = menu.filter(item => item.tags === tag);
-      // res.send(tag);
       res.send(filteredMenu);
     });
   },
