@@ -19,27 +19,27 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="title"
+          className={undefined}
         >
           <h2>
             Menu
           </h2>
         </div>,
         <div
-          className="menuNav"
+          className={undefined}
         >
           <button
-            className="lunchBtn"
+            className={undefined}
           >
             Lunch
           </button>
           <button
-            className="dinnerBtn"
+            className={undefined}
           >
             Dinner
           </button>
           <button
-            className="dessertBtn"
+            className={undefined}
           >
             Dessert
           </button>
@@ -65,7 +65,7 @@ ShallowWrapper {
           </select>
         </div>,
       ],
-      "className": "menuViewBox",
+      "className": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -77,7 +77,7 @@ ShallowWrapper {
           "children": <h2>
             Menu
           </h2>,
-          "className": "title",
+          "className": undefined,
         },
         "ref": null,
         "rendered": Object {
@@ -100,17 +100,17 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <button
-              className="lunchBtn"
+              className={undefined}
             >
               Lunch
             </button>,
             <button
-              className="dinnerBtn"
+              className={undefined}
             >
               Dinner
             </button>,
             <button
-              className="dessertBtn"
+              className={undefined}
             >
               Dessert
             </button>,
@@ -135,7 +135,7 @@ ShallowWrapper {
               r
             </select>,
           ],
-          "className": "menuNav",
+          "className": undefined,
         },
         "ref": null,
         "rendered": Array [
@@ -145,7 +145,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Lunch",
-              "className": "lunchBtn",
+              "className": undefined,
             },
             "ref": null,
             "rendered": "Lunch",
@@ -157,7 +157,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Dinner",
-              "className": "dinnerBtn",
+              "className": undefined,
             },
             "ref": null,
             "rendered": "Dinner",
@@ -169,7 +169,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Dessert",
-              "className": "dessertBtn",
+              "className": undefined,
             },
             "ref": null,
             "rendered": "Dessert",
@@ -246,7 +246,7 @@ ShallowWrapper {
         "type": "div",
       },
     ],
-    "type": "section",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -256,27 +256,27 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="title"
+            className={undefined}
           >
             <h2>
               Menu
             </h2>
           </div>,
           <div
-            className="menuNav"
+            className={undefined}
           >
             <button
-              className="lunchBtn"
+              className={undefined}
             >
               Lunch
             </button>
             <button
-              className="dinnerBtn"
+              className={undefined}
             >
               Dinner
             </button>
             <button
-              className="dessertBtn"
+              className={undefined}
             >
               Dessert
             </button>
@@ -302,7 +302,7 @@ ShallowWrapper {
             </select>
           </div>,
         ],
-        "className": "menuViewBox",
+        "className": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -314,7 +314,7 @@ ShallowWrapper {
             "children": <h2>
               Menu
             </h2>,
-            "className": "title",
+            "className": undefined,
           },
           "ref": null,
           "rendered": Object {
@@ -337,17 +337,17 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <button
-                className="lunchBtn"
+                className={undefined}
               >
                 Lunch
               </button>,
               <button
-                className="dinnerBtn"
+                className={undefined}
               >
                 Dinner
               </button>,
               <button
-                className="dessertBtn"
+                className={undefined}
               >
                 Dessert
               </button>,
@@ -372,7 +372,7 @@ ShallowWrapper {
                 r
               </select>,
             ],
-            "className": "menuNav",
+            "className": undefined,
           },
           "ref": null,
           "rendered": Array [
@@ -382,7 +382,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Lunch",
-                "className": "lunchBtn",
+                "className": undefined,
               },
               "ref": null,
               "rendered": "Lunch",
@@ -394,7 +394,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Dinner",
-                "className": "dinnerBtn",
+                "className": undefined,
               },
               "ref": null,
               "rendered": "Dinner",
@@ -406,7 +406,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Dessert",
-                "className": "dessertBtn",
+                "className": undefined,
               },
               "ref": null,
               "rendered": "Dessert",
@@ -483,7 +483,7 @@ ShallowWrapper {
           "type": "div",
         },
       ],
-      "type": "section",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

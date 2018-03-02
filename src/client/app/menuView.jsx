@@ -1,5 +1,6 @@
 import React from 'react';
 import get from '../ajaxHelper';
+import styles from './styles/MenuViewStyles.css';
 
 class MenuView extends React.Component {
   constructor(props) {
@@ -19,21 +20,21 @@ class MenuView extends React.Component {
   }
   render() {
     return (
-      <section className="menuViewBox">
-        <div className="title">
+      <div className={styles.menuViewBox}>
+        <div className={styles.title}>
           <h2>Menu</h2>
         </div>
-        <div className="menuNav">
-          <button className="lunchBtn">Lunch</button>
-          <button className="dinnerBtn">Dinner</button>
-          <button className="dessertBtn">Dessert</button>
+        <div className={styles.menuNav}>
+          <button className={styles.lunchBtn}>Lunch</button>
+          <button className={styles.dinnerBtn}>Dinner</button>
+          <button className={styles.dessertBtn}>Dessert</button>
           <select className="filterBox">
             <option value="gluten-free">gluten-free</option>
             <option value="vegan">vegan</option>
             <option value="vegetarian">vegetarian</option>r
           </select>
         </div>
-      </section>);
+      </div>);
   }
 }
 
