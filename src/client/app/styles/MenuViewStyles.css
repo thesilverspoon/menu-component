@@ -6,6 +6,7 @@
 }
 
 :local(.title) {
+  font-family: Lato;
   color: #333333;
   font-weight: bold;
   display: flex;

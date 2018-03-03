@@ -1,6 +1,7 @@
 import React from 'react';
 import get from '../ajaxHelper';
 import styles from './styles/MenuViewStyles.css';
+import MenuItem from './MenuItem';
 
 class MenuView extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class MenuView extends React.Component {
     this.state = {
       restId: 90976,
       menuType: 'lunch',
-      tag: 'vegan',
+      tag: 'none',
+      menuData: [],
     };
   }
   componentDidMount() {
@@ -16,7 +18,11 @@ class MenuView extends React.Component {
   }
   fetch() {
     const { restId, menuType, tag } = this.state;
-    get(restId, menuType, tag);
+    get(restId, menuType, tag, (result) => {
+      this.setState({
+        menuData: result,
+      });
+    });
   }
   render() {
     return (
@@ -33,6 +39,11 @@ class MenuView extends React.Component {
             <option value="vegan">vegan</option>
             <option value="vegetarian">vegetarian</option>r
           </select>
+        </div>
+        <div className={styles.itemList}>
+          {
+            this.state.menuData.map(elem => <MenuItem item={elem} />)
+          }
         </div>
       </div>);
   }
