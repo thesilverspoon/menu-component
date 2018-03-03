@@ -33,6 +33,12 @@
   box-sizing: border-box;
 }
 
+:local(.lunchBtn:focus) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
+}
+
 :local(.dinnerBtn) {
   font-size: 0.875rem;
   font-family: Lato;
@@ -47,6 +53,12 @@
   box-sizing: border-box;
 }
 
+:local(.dinnerBtn:focus) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
+}
+
 :local(.dessertBtn) {
   font-size: 0.875rem;
   font-family: Lato;
@@ -59,4 +71,10 @@
   border: 1px solid #e1e1e1;
   border-radius: 2px;
   box-sizing: border-box;
+}
+
+:local(.dessertBtn:focus) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
 }
