@@ -6,13 +6,13 @@ describe('server request handling', () => {
   beforeAll(() => db.mongoose.connect('mongodb://localhost/fecproject'));
   afterAll(() => db.mongoose.disconnect());
 
-  test('It should respond to the GET method', () => {
-    return request(app).get('/').expect(200);
-  });
+  test('It should respond to the GET method', () => (
+    request(app).get('/').expect(200)
+  ));
 
-  test('It should respond with 404 when given wrong URL', () => {
-    return request(app).get('/doggo').expect(404);
-  });
+  test('It should respond with 404 when given wrong URL', () => (
+    request(app).get('/doggo').expect(404)
+  ));
 
   test('should return correct data shape for lunch menu', (done) => {
     request(app)

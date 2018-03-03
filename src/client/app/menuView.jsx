@@ -1,7 +1,7 @@
 import React from 'react';
 import get from '../ajaxHelper';
 import styles from './styles/MenuViewStyles.css';
-import MenuItem from './MenuItem';
+import MenuType from './MenuType';
 
 class MenuView extends React.Component {
   constructor(props) {
@@ -37,14 +37,14 @@ class MenuView extends React.Component {
           <select className="filterBox">
             <option value="gluten-free">gluten-free</option>
             <option value="vegan">vegan</option>
-            <option value="vegetarian">vegetarian</option>r
+            <option value="vegetarian">vegetarian</option>
           </select>
         </div>
-        <div className={styles.itemList}>
-          {
-            this.state.menuData.map(elem => <MenuItem item={elem} />)
-          }
-        </div>
+        <MenuType
+          menu={this.state.menuData}
+          type={this.state.menuType}
+          tag={this.state.tag}
+        />
       </div>);
   }
 }
