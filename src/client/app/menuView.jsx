@@ -9,9 +9,12 @@ class MenuView extends React.Component {
     this.state = {
       restId: 90976,
       menuType: 'lunch',
-      tag: 'vegetarian',
+      tag: 'none',
       menuData: [],
     };
+    this.menuSelect = this.menuSelect.bind(this);
+    this.fetch = this.fetch.bind(this);
+    this.filterSelect = this.filterSelect.bind(this);
   }
   componentDidMount() {
     this.fetch();
@@ -24,6 +27,21 @@ class MenuView extends React.Component {
       });
     });
   }
+
+  menuSelect(e) {
+    console.log(e.target.value);
+    this.setState({
+      menuType: e.target.value,
+      tag: 'none',
+    }, () => this.fetch());
+  }
+  filterSelect(e) {
+    console.log(e.target.value);
+    this.setState({
+      tag: e.target.value,
+    }, () => this.fetch());
+  }
+
   render() {
     return (
       <div className={styles.menuViewBox}>
@@ -31,10 +49,26 @@ class MenuView extends React.Component {
           <h2>Menu</h2>
         </div>
         <div className={styles.menuNav}>
-          <button className={styles.lunchBtn}>Lunch</button>
-          <button className={styles.dinnerBtn}>Dinner</button>
-          <button className={styles.dessertBtn}>Dessert</button>
-          <select className="filterBox">
+          <button
+            className={styles.lunchBtn}
+            value="lunch"
+            onClick={this.menuSelect}
+          >Lunch
+          </button>
+          <button
+            className={styles.dinnerBtn}
+            value="dinner"
+            onClick={this.menuSelect}
+          >Dinner
+          </button>
+          <button
+            className={styles.dessertBtn}
+            value="dessert"
+            onClick={this.menuSelect}
+          >Dessert
+          </button>
+          <select className="filterBox" onChange={this.filterSelect} value={this.state.tag}>
+            <option value="none">filter</option>
             <option value="gluten-free">gluten-free</option>
             <option value="vegan">vegan</option>
             <option value="vegetarian">vegetarian</option>
