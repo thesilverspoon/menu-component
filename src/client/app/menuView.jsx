@@ -1,7 +1,7 @@
 import React from 'react';
 import get from '../ajaxHelper';
 import styles from './styles/MenuViewStyles.css';
-import MenuType from './MenuType';
+import MenuSelector from './MenuSelector';
 
 class MenuView extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class MenuView extends React.Component {
     this.state = {
       restId: 90976,
       menuType: 'lunch',
-      tag: 'none',
+      tag: 'vegetarian',
       menuData: [],
     };
   }
@@ -40,7 +40,7 @@ class MenuView extends React.Component {
             <option value="vegetarian">vegetarian</option>
           </select>
         </div>
-        <MenuType
+        <MenuSelector
           menu={this.state.menuData}
           type={this.state.menuType}
           tag={this.state.tag}
