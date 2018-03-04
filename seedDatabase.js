@@ -1,7 +1,7 @@
 const db = require('./db/dbHelpers');
 const sampleData = require('./data/sampleData');
 
-db.mongoose.connect('mongodb://localhost/fecproject');
+db.mongoose.connect('mongodb://localhost/silverspoon');
 
 db.save({ data: sampleData, model: db.Restaurant }, (result) => {
   if (result) {
