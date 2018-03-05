@@ -1,12 +1,10 @@
 const menuList = require('../../helpers/menuGenerator');
-const sampleData = require('../../data/sampleData');
 
 const entreeMenu = menuList.entreeMenuGen();
 const [entreeItem] = entreeMenu;
 const dessertMenu = menuList.dessertMenuGen();
 const [dessertItem] = dessertMenu;
 
-// test menu generator functions
 describe('function menu generator functions', () => {
   describe('entree generator func', () => {
     it('should be an array', () => {
@@ -55,4 +53,3 @@ describe('function menu generator functions', () => {
     });
   });
 });
-

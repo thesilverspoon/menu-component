@@ -1,9 +1,10 @@
-const db = require('../../../db/dbHelpers');
-
+const sampleData = require('../../data/sampleData');
+const db = require('../../db/dbHelpers');
+const mongoose = require('mongoose');
 
 describe('database helpers - save and find', () => {
-  beforeAll(() => db.mongoose.connect('mongodb://localhost/fecproject'));
-  afterAll(() => db.mongoose.disconnect());
+  beforeAll(() => mongoose.connect('mongodb://localhost/silverspoon'));
+  afterAll(() => mongoose.disconnect());
 
   it('should save all data items to test database', (done) => {
     expect.assertions(1);
@@ -22,6 +23,20 @@ describe('database helpers - save and find', () => {
       expect(docs.length).toBe(1);
       expect(docs[0].id).toBe(89104);
       done();
+    });
+  });
+
+  it('should not insert duplicate restaurants when the same object is saved', async (done) => {
+    expect.assertions(1);
+    db.save({ data: sampleData, model: db.Restaurant }, (result) => {
+      if (result) {
+        db.find({ query: '{}' }, (err, docs) => {
+          if (err) { throw err; }
+          console.log(docs.length);
+          expect(docs.length).toBe(119);
+          done();
+        });
+      }
     });
   });
 
