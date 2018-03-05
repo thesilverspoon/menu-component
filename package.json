@@ -8,7 +8,8 @@
     "test:coverage": "jest --coverage",
     "build": "./node_modules/.bin/webpack -d --watch",
     "bundle": "./node_modules/.bin/webpack",
-    "seed": "node seedDatabase.js"
+    "seed": "node seedDatabase.js",
+    "server": "nodemon server.js"
   },
   "jest": {
     "moduleNameMapper": {

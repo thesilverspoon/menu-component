@@ -53,7 +53,7 @@ $ npm run seed
 
 6. Run the development server and start webpack (client needs both active to run):
 ```
-$ npm run server-dev
+$ npm run server
 
 $ npm run bundle
 
