@@ -30,22 +30,35 @@ ShallowWrapper {
         >
           <button
             className={undefined}
+            onClick={[Function]}
+            value="lunch"
           >
             Lunch
           </button>
           <button
             className={undefined}
+            onClick={[Function]}
+            value="dinner"
           >
             Dinner
           </button>
           <button
             className={undefined}
+            onClick={[Function]}
+            value="dessert"
           >
             Dessert
           </button>
           <select
             className="filterBox"
+            onChange={[Function]}
+            value="none"
           >
+            <option
+              value="none"
+            >
+              filter
+            </option>
             <option
               value="gluten-free"
             >
@@ -61,9 +74,13 @@ ShallowWrapper {
             >
               vegetarian
             </option>
-            r
           </select>
         </div>,
+        <MenuType
+          menu={Array []}
+          tag="none"
+          type="lunch"
+        />,
       ],
       "className": undefined,
     },
@@ -101,22 +118,35 @@ ShallowWrapper {
           "children": Array [
             <button
               className={undefined}
+              onClick={[Function]}
+              value="lunch"
             >
               Lunch
             </button>,
             <button
               className={undefined}
+              onClick={[Function]}
+              value="dinner"
             >
               Dinner
             </button>,
             <button
               className={undefined}
+              onClick={[Function]}
+              value="dessert"
             >
               Dessert
             </button>,
             <select
               className="filterBox"
+              onChange={[Function]}
+              value="none"
             >
+              <option
+                value="none"
+              >
+                filter
+              </option>
               <option
                 value="gluten-free"
               >
@@ -132,7 +162,6 @@ ShallowWrapper {
               >
                 vegetarian
               </option>
-              r
             </select>,
           ],
           "className": undefined,
@@ -146,6 +175,8 @@ ShallowWrapper {
             "props": Object {
               "children": "Lunch",
               "className": undefined,
+              "onClick": [Function],
+              "value": "lunch",
             },
             "ref": null,
             "rendered": "Lunch",
@@ -158,6 +189,8 @@ ShallowWrapper {
             "props": Object {
               "children": "Dinner",
               "className": undefined,
+              "onClick": [Function],
+              "value": "dinner",
             },
             "ref": null,
             "rendered": "Dinner",
@@ -170,6 +203,8 @@ ShallowWrapper {
             "props": Object {
               "children": "Dessert",
               "className": undefined,
+              "onClick": [Function],
+              "value": "dessert",
             },
             "ref": null,
             "rendered": "Dessert",
@@ -181,6 +216,11 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
+                <option
+                  value="none"
+                >
+                  filter
+                </option>,
                 <option
                   value="gluten-free"
                 >
@@ -196,12 +236,25 @@ ShallowWrapper {
                 >
                   vegetarian
                 </option>,
-                "r",
               ],
               "className": "filterBox",
+              "onChange": [Function],
+              "value": "none",
             },
             "ref": null,
             "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "filter",
+                  "value": "none",
+                },
+                "ref": null,
+                "rendered": "filter",
+                "type": "option",
+              },
               Object {
                 "instance": null,
                 "key": undefined,
@@ -238,12 +291,24 @@ ShallowWrapper {
                 "rendered": "vegetarian",
                 "type": "option",
               },
-              "r",
             ],
             "type": "select",
           },
         ],
         "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "menu": Array [],
+          "tag": "none",
+          "type": "lunch",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -267,22 +332,35 @@ ShallowWrapper {
           >
             <button
               className={undefined}
+              onClick={[Function]}
+              value="lunch"
             >
               Lunch
             </button>
             <button
               className={undefined}
+              onClick={[Function]}
+              value="dinner"
             >
               Dinner
             </button>
             <button
               className={undefined}
+              onClick={[Function]}
+              value="dessert"
             >
               Dessert
             </button>
             <select
               className="filterBox"
+              onChange={[Function]}
+              value="none"
             >
+              <option
+                value="none"
+              >
+                filter
+              </option>
               <option
                 value="gluten-free"
               >
@@ -298,9 +376,13 @@ ShallowWrapper {
               >
                 vegetarian
               </option>
-              r
             </select>
           </div>,
+          <MenuType
+            menu={Array []}
+            tag="none"
+            type="lunch"
+          />,
         ],
         "className": undefined,
       },
@@ -338,22 +420,35 @@ ShallowWrapper {
             "children": Array [
               <button
                 className={undefined}
+                onClick={[Function]}
+                value="lunch"
               >
                 Lunch
               </button>,
               <button
                 className={undefined}
+                onClick={[Function]}
+                value="dinner"
               >
                 Dinner
               </button>,
               <button
                 className={undefined}
+                onClick={[Function]}
+                value="dessert"
               >
                 Dessert
               </button>,
               <select
                 className="filterBox"
+                onChange={[Function]}
+                value="none"
               >
+                <option
+                  value="none"
+                >
+                  filter
+                </option>
                 <option
                   value="gluten-free"
                 >
@@ -369,7 +464,6 @@ ShallowWrapper {
                 >
                   vegetarian
                 </option>
-                r
               </select>,
             ],
             "className": undefined,
@@ -383,6 +477,8 @@ ShallowWrapper {
               "props": Object {
                 "children": "Lunch",
                 "className": undefined,
+                "onClick": [Function],
+                "value": "lunch",
               },
               "ref": null,
               "rendered": "Lunch",
@@ -395,6 +491,8 @@ ShallowWrapper {
               "props": Object {
                 "children": "Dinner",
                 "className": undefined,
+                "onClick": [Function],
+                "value": "dinner",
               },
               "ref": null,
               "rendered": "Dinner",
@@ -407,6 +505,8 @@ ShallowWrapper {
               "props": Object {
                 "children": "Dessert",
                 "className": undefined,
+                "onClick": [Function],
+                "value": "dessert",
               },
               "ref": null,
               "rendered": "Dessert",
@@ -418,6 +518,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
+                  <option
+                    value="none"
+                  >
+                    filter
+                  </option>,
                   <option
                     value="gluten-free"
                   >
@@ -433,12 +538,25 @@ ShallowWrapper {
                   >
                     vegetarian
                   </option>,
-                  "r",
                 ],
                 "className": "filterBox",
+                "onChange": [Function],
+                "value": "none",
               },
               "ref": null,
               "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "filter",
+                    "value": "none",
+                  },
+                  "ref": null,
+                  "rendered": "filter",
+                  "type": "option",
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -475,12 +593,24 @@ ShallowWrapper {
                   "rendered": "vegetarian",
                   "type": "option",
                 },
-                "r",
               ],
               "type": "select",
             },
           ],
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "menu": Array [],
+            "tag": "none",
+            "type": "lunch",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

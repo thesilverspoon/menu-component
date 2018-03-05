@@ -4,9 +4,12 @@
   "description": "the menu component for our FEC project",
   "main": "src/server/server.js",
   "scripts": {
-    "test": "jest menuView.test.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "build": "./node_modules/.bin/webpack -d --watch",
-    "seed": "node seedDatabase.js"
+    "bundle": "./node_modules/.bin/webpack",
+    "seed": "node seedDatabase.js",
+    "server": "nodemon server.js"
   },
   "jest": {
     "moduleNameMapper": {

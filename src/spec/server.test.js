@@ -3,7 +3,7 @@ const app = require('../server/app');
 const db = require('../../db/dbHelpers');
 
 describe('server request handling', () => {
-  beforeAll(() => db.mongoose.connect('mongodb://localhost/fecproject'));
+  beforeAll(() => db.mongoose.connect('mongodb://localhost/silverspoon'));
   afterAll(() => db.mongoose.disconnect());
 
   test('It should respond to the GET method', () => (
