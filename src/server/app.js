@@ -11,6 +11,8 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(parser.json());
 
+app.options('*', cors());
+
 app.use('/restaurants', routes);
 
 app.use('/', express.static(path.join(__dirname, '../client')));
