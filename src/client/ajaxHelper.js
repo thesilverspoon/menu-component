@@ -1,7 +1,7 @@
 const $ = require('jquery');
 
 const ajaxGet = (restId, menuType, tag, cb) => {
-  const temp = `/restaurants/${restId}/menu/${menuType}`;
+  const temp = `http://localhost:3005/restaurants/${restId}/menu/${menuType}`;
   const URL = tag === 'none' ? temp : `${temp}/${tag}`;
   $.ajax({
     type: 'GET',
@@ -14,3 +14,4 @@ const ajaxGet = (restId, menuType, tag, cb) => {
 };
 
 export default ajaxGet;
+
