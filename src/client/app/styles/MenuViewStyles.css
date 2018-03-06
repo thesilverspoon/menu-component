@@ -14,6 +14,7 @@
 }
 
 :local(.menuNav) {
+  height: 50px;
   padding-bottom: 16px;
   margin-top: 16px;
   border-bottom: 1px solid #e1e1e1;
@@ -28,12 +29,18 @@
   display: inline-block;
   padding: 5px 0px 5px 0px;
   margin-right: 10px;
-  border: 1px solid #e1e1e1;
+  border: 2px solid #e1e1e1;
   border-radius: 2px;
   box-sizing: border-box;
 }
 
 :local(.lunchBtn:focus) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
+}
+
+:local(.lunchBtn:hover) {
   border: 2px solid red;
   border-radius: 2px;
   outline: 0;
@@ -48,7 +55,7 @@
   display: inline-block;
   padding: 5px 0px 5px 0px;
   margin-right: 10px;
-  border: 1px solid #e1e1e1;
+  border: 2px solid #e1e1e1;
   border-radius: 2px;
   box-sizing: border-box;
 }
@@ -59,6 +66,11 @@
   outline: 0;
 }
 
+:local(.dinnerBtn:hover) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
+}
 :local(.dessertBtn) {
   font-size: 0.875rem;
   font-family: Lato;
@@ -68,12 +80,18 @@
   display: inline-block;
   padding: 5px 0px 5px 0px;
   margin-right: 10px;
-  border: 1px solid #e1e1e1;
+  border: 2px solid #e1e1e1;
   border-radius: 2px;
   box-sizing: border-box;
 }
 
 :local(.dessertBtn:focus) {
+  border: 2px solid red;
+  border-radius: 2px;
+  outline: 0;
+}
+
+:local(.dessertBtn:hover) {
   border: 2px solid red;
   border-radius: 2px;
   outline: 0;
