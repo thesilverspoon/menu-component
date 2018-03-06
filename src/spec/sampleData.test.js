@@ -1,4 +1,3 @@
-const menuList = require('../../helpers/menuGenerator');
 const sampleData = require('../../data/sampleData');
 
 // test sample data array

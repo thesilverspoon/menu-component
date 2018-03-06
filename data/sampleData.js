@@ -139,6 +139,5 @@ const sampleDataGen = () => {
   return dataArr;
 };
 
-console.log('test message for circleCI')
 const sampleData = sampleDataGen();
 module.exports = sampleData;

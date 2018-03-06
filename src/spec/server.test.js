@@ -1,10 +1,10 @@
 const request = require('supertest');
 const app = require('../server/app');
-const db = require('../../db/dbHelpers');
+const mongoose = require('mongoose');
 
 describe('server request handling', () => {
-  beforeAll(() => db.mongoose.connect('mongodb://localhost/silverspoon'));
-  afterAll(() => db.mongoose.disconnect());
+  beforeAll(() => mongoose.connect('mongodb://localhost/silverspoon'));
+  afterAll(() => mongoose.disconnect());
 
   test('It should respond to the GET method', () => (
     request(app).get('/').expect(200)

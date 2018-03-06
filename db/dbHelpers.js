@@ -22,12 +22,13 @@ const restaurantSchema = mongoose.Schema({
   },
 });
 
-const Restaurant = mongoose.model('restaurants', restaurantSchema);
+const Restaurant = mongoose.model('restaurantMenus', restaurantSchema);
 
 const save = (options, cb) => {
   const { data } = options;
   const Model = options.model;
   let count = 0;
+  const idArr = [];
   data.forEach((item) => {
     const instance = new Model({
       id: item.id,
@@ -38,18 +39,20 @@ const save = (options, cb) => {
         dessert: item.menu.dessert,
       },
     });
-    // Model.on('index', (error) => {
-    //   console.log(error);
+    if (!idArr.includes(item.id)) {
+      idArr.push(item.id);
       Model.create(instance, (err, result) => {
-        if (err) {
-          console.log('error adding to db ==> ', err);
-        }
         count += 1;
+        if (err) {
+          console.log('ERR: duplicate title already found in collection');
+        }
         if (count === data.length) {
           cb(result);
         }
       });
-    // });
+    } else {
+      count += 1;
+    }
   });
 };
 
@@ -79,5 +82,3 @@ const find = (options, cb) => {
 module.exports.save = save;
 module.exports.find = find;
 module.exports.Restaurant = Restaurant;
-module.exports.mongoose = mongoose;
-
