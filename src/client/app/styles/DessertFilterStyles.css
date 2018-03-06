@@ -9,3 +9,11 @@
   margin-top: 15px;
 }
 
+:local(.itemBox) {
+  width: 650px;
+  height: auto;
+  display: block;
+  padding-bottom: 35px;
+  overflow: auto;
+}
+

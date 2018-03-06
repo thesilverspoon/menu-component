@@ -13,14 +13,12 @@ const DessertFilterMenu = (props) => {
     );
   }
   return (
-    <section>
-      <section className={styles.itemBox}>
-        <div className={styles.header}>{header}</div>
-        {
-          props.menu.map(data => <MenuItem item={data} />)
-        }
-      </section>
-    </section>
+    <div className={styles.itemBox}>
+      <div className={styles.header}>{header}</div>
+      {
+        props.menu.map(data => <MenuItem item={data} />)
+      }
+    </div>
   );
 };
 

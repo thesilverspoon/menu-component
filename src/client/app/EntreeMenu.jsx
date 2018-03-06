@@ -15,36 +15,34 @@ const EntreeMenu = (props) => {
   const headers = props.type === 'lunch' ? lunchHeaders : dinnerHeaders;
   if (props.menu.length === 0) {
     return (
-      <div></div>
+      <div />
     );
   }
   return (
-    <section>
-      <section className={styles.itemList}>
-        <section className={styles.itemBox}>
-          <div className={styles.header}>{headers[0]}</div>
-          {
-            items[0].map(data => <MenuItem item={data} />)
-          }
-        </section>
-        <div>
-          <div className={`${styles.header} ${styles.pad}`}>{headers[1]}</div>
-          {
-            items[1].map(data => <MenuItem item={data} />)
-          }
-        </div>
-        <div>
-          <div className={`${styles.header} ${styles.pad}`}>{headers[2]}</div>
-          {
-            items[2].map(data => <MenuItem item={data} />)
-          }
-        </div>
-        <div>
-          <div className={`${styles.header} ${styles.pad}`}>{headers[3]}</div>
-          {
-            items[3].map(data => <MenuItem item={data} />)
-          }
-        </div>
+    <section className={styles.itemList}>
+      <section className={styles.itemBox}>
+        <div className={`${styles.header} ${styles.pad}`}>{headers[0]}</div>
+        {
+          items[0].map(data => <MenuItem item={data} />)
+        }
+      </section>
+      <section className={styles.itemBox}>
+        <div className={styles.header}>{headers[1]}</div>
+        {
+          items[1].map(data => <MenuItem item={data} />)
+        }
+      </section>
+      <section className={styles.itemBox}>
+        <div className={styles.header}>{headers[2]}</div>
+        {
+          items[2].map(data => <MenuItem item={data} />)
+        }
+      </section>
+      <section className={styles.itemBox}>
+        <div className={styles.header}>{headers[3]}</div>
+        {
+          items[3].map(data => <MenuItem item={data} />)
+        }
       </section>
     </section>
   );
