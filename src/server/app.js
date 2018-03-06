@@ -3,9 +3,11 @@ const morgan = require('morgan');
 const path = require('path');
 const parser = require('body-parser');
 const routes = require('./routes');
+const cors = require('cors');
 
 const app = express();
 
+app.use(cors());
 app.use(morgan('dev'));
 app.use(parser.json());
 

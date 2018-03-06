@@ -2,7 +2,7 @@ const dbHelpers = require('../../db/dbHelpers');
 
 module.exports = {
   menuType: (req, res) => {
-    res.set({ 'Access-Control-Allow-Origin': '*' });
+    // res.set({ 'Access-Control-Allow-Origin': '*' });
     const { meal } = req.params;
     const queryObj = {
       query: `menu.${meal}`,
@@ -13,7 +13,7 @@ module.exports = {
     });
   },
   filterBy: (req, res) => {
-    res.set({ 'Access-Control-Allow-Origin': '*' });
+    // res.set({ 'Access-Control-Allow-Origin': '*' });
     const { meal, tag } = req.params;
     const queryObj = {
       query: `menu.${meal}`,
