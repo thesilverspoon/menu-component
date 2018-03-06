@@ -72,4 +72,6 @@ npm run test:coverage     // show the test coverage report
 
 npm run build             // run webpack in development mode (this will watch for changes)
 
+npm run build:prod        // to run through proxy
+
 ```
