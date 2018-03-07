@@ -7,7 +7,7 @@ class MenuView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restId: 90976,
+      restId: this.props.id || 90976,
       menuType: 'lunch',
       tag: 'none',
       menuData: [],
@@ -29,14 +29,12 @@ class MenuView extends React.Component {
   }
 
   menuSelect(e) {
-    console.log(e.target.value);
     this.setState({
       menuType: e.target.value,
       tag: 'none',
     }, () => this.fetch());
   }
   filterSelect(e) {
-    console.log(e.target.value);
     this.setState({
       tag: e.target.value,
     }, () => this.fetch());

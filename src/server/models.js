@@ -3,8 +3,10 @@ const dbHelpers = require('../../db/dbHelpers');
 module.exports = {
   menuType: (req, res) => {
     // res.set({ 'Access-Control-Allow-Origin': '*' });
-    const { meal } = req.params;
+    const { meal, id } = req.params;
+    console.log(req.params);
     const queryObj = {
+      id: id,
       query: `menu.${meal}`,
     };
     dbHelpers.find(queryObj, (err, result) => {
@@ -14,8 +16,9 @@ module.exports = {
   },
   filterBy: (req, res) => {
     // res.set({ 'Access-Control-Allow-Origin': '*' });
-    const { meal, tag } = req.params;
+    const { meal, tag, id } = req.params;
     const queryObj = {
+      id: id,
       query: `menu.${meal}`,
     };
     dbHelpers.find(queryObj, (err, result) => {
