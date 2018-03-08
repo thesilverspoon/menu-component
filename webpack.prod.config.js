@@ -1,12 +1,5 @@
 const path = require('path');
 
-const API_URL = {
-  production: JSON.stringify('http://gettingstarte-d2uhs-env.us-east-2.elasticbeanstalk.com/'),
-  development: JSON.stringify('http://localhost:3005')
-}
-
-const enviroment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
-
 module.exports = {
   entry: './src/client/app/prodDist.jsx',
 
@@ -38,9 +31,4 @@ module.exports = {
     path: path.resolve(__dirname, 'src/public'),
     publicPath: '/'
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'API_URL': API_URL[environment]
-    })
-  ]
 }; 
