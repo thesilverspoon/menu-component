@@ -17,7 +17,6 @@ class MenuView extends React.Component {
     this.filterSelect = this.filterSelect.bind(this);
   }
   componentDidMount() {
-    console.log('hello');
     this.fetch();
   }
   fetch() {
