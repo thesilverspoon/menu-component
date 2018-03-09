@@ -2,9 +2,9 @@ const db = require('./db/dbHelpers');
 const sampleData = require('./data/sampleData');
 const mongoose = require('mongoose');
 
-const connection = process.env.PORT ? 'mongodb://awsuser:awspwd@ds259768.mlab.com:59768/menu_comp' : 'mongodb://localhost/silverspoon';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/silverspoon';
 
-mongoose.connect(connection);
+mongoose.connect(MONGO_URI);
 
 db.save({ data: sampleData, model: db.Restaurant }, (result) => {
   if (result) {
