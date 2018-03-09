@@ -1,7 +1,7 @@
 const $ = require('jquery');
 
 const ajaxGet = (restId, menuType, tag, cb) => {
-  const temp = `/restaurants/${restId}/menu/${menuType}`;
+  const temp = `http://silverspoon-menu.us-east-2.elasticbeanstalk.com/restaurants/${restId}/menu/${menuType}`;
   const URL = tag === 'none' ? temp : `${temp}/${tag}`;
   $.ajax({
     type: 'GET',
