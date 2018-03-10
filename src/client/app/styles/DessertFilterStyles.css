@@ -1,5 +1,5 @@
 :local(.header) {
-  width: 650px;
+  width: 685px;
   font-weight: 700;
   font-family: Poppins;
   color: 333333;
@@ -10,7 +10,7 @@
 }
 
 :local(.itemBox) {
-  width: 650px;
+  width: 685px;
   height: auto;
   display: block;
   padding: 0px 0px 80px 10px;
