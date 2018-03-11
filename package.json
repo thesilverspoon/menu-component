@@ -5,7 +5,7 @@
   "main": "src/server/server.js",
   "scripts": {
     "start": "node src/server/server.js",
-    "test": "jest",
+    "test": "jest dessertMenu.test.jsx",
     "test:coverage": "jest --coverage",
     "build": "./node_modules/.bin/webpack -d --watch",
     "build:prod": "./node_modules/.bin/webpack --config './webpack.prod.config.js'",

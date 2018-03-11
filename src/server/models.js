@@ -4,7 +4,6 @@ module.exports = {
   menuType: (req, res) => {
     // res.set({ 'Access-Control-Allow-Origin': '*' });
     const { meal, id } = req.params;
-    console.log(req.params);
     const queryObj = {
       id: id,
       query: `menu.${meal}`,
