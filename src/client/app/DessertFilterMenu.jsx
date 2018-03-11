@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MenuItem from './MenuItem';
 import styles from './styles/DessertFilterStyles.css';
 
@@ -20,6 +21,16 @@ const DessertFilterMenu = (props) => {
       }
     </div>
   );
+};
+
+DessertFilterMenu.propTypes = {
+  menu: PropTypes.arrayOf(PropTypes.shape({
+    foodItem: PropTypes.string.isRequired,
+    cost: PropTypes.number.isRequired,
+    tags: PropTypes.string.isRequired,
+  })).isRequired,
+  type: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
 };
 
 export default DessertFilterMenu;
